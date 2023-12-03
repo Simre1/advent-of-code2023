@@ -39,6 +39,7 @@ library
     primitive,
     massiv,
     megaparsec,
+    parser-combinators,
     transformers,
     regex,
     random,

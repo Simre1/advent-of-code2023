@@ -1,12 +1,16 @@
 module Day15.Main where
 
-import qualified Data.Map as M
-import qualified Data.Set as S
-import qualified Data.Vector as V
-import qualified Data.List.Split as LS
-import qualified Data.List as L
-import qualified Data.Text as T
+import Control.Applicative.Combinators qualified as P
+import Data.List qualified as L
+import Data.List.Split qualified as LS
+import Data.Map qualified as M
+import Data.Set qualified as S
+import Data.Text qualified as T
+import Data.Vector qualified as V
 import Shared
+import Text.Megaparsec qualified as P
+import Text.Megaparsec.Char qualified as P
+import Text.Megaparsec.Char.Lexer qualified as P
 
 type Input = ()
 

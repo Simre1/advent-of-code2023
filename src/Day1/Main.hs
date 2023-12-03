@@ -14,7 +14,7 @@ import Shared
 type Input = [String]
 
 readInput :: IO Input
-readInput = lines <$> readFile "inputs/day1/example2"
+readInput = lines <$> readFile "inputs/day1/input1"
 
 solution1 :: Input -> IO ()
 solution1 input =
