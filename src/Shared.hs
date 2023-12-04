@@ -70,3 +70,4 @@ gridParse str =
               <$> row
         )
         row_major
+
