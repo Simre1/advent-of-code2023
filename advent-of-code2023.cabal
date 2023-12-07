@@ -73,6 +73,9 @@ library
     StandaloneDeriving
     PartialTypeSignatures
     OverloadedLabels
+    OverloadedRecordDot
+    NoFieldSelectors
+    DuplicateRecordFields
   ghc-options: -O1 -threaded
 
 executable runner

@@ -5,6 +5,7 @@ import Data.List qualified as L
 import Data.List.Split qualified as LS
 import Data.Map qualified as M
 import Data.Set qualified as S
+import Data.Text (Text)
 import Data.Text qualified as T
 import Data.Vector qualified as V
 import Shared

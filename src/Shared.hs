@@ -34,6 +34,9 @@ parseLines p = do
 lexeme :: Parser a -> Parser a
 lexeme = P.lexeme (void $ P.takeWhileP (Just "Whitespace") (== ' '))
 
+lexemeFull :: Parser a -> Parser a
+lexemeFull = P.lexeme P.space
+
 chainl :: Parser a -> Parser (a -> a -> a) -> Parser a
 chainl term op = do
   x <- term
