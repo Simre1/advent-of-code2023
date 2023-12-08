@@ -1,7 +1,7 @@
 module Shared where
 
 import Control.Applicative (Alternative (..))
-import Data.Char (isNumber)
+import Data.Char (isNumber, isAlphaNum)
 import Data.Functor (void)
 import Data.Text (Text)
 import Data.Text qualified as T
@@ -62,6 +62,9 @@ many1 f = (:) <$> f <*> many f
 numberP :: Parser Int
 numberP = fmap (read . T.unpack) $ lexeme $ P.takeWhile1P (Just "Number") isNumber
 
+wordP :: Parser Text
+wordP = lexeme $ P.takeWhile1P (Just "Word") isAlphaNum
+
 gridParse :: String -> [(V2 Int, Char)]
 gridParse str =
   let row_major = zip [0 ..] (zip [0 ..] <$> Prelude.lines str)
@@ -73,4 +76,12 @@ gridParse str =
               <$> row
         )
         row_major
+
+
+greatestCommonDivisor :: Integral a => a -> a -> a
+greatestCommonDivisor a 0 = abs a
+greatestCommonDivisor a b = greatestCommonDivisor b (a `mod` b)
+
+leastCommonMultiple :: Integral a => a -> a -> a
+leastCommonMultiple a b = abs (a * b) `div` greatestCommonDivisor a b
 
