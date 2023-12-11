@@ -62,6 +62,9 @@ many1 f = (:) <$> f <*> many f
 numberP :: Parser Int
 numberP = fmap (read . T.unpack) $ lexeme $ P.takeWhile1P (Just "Number") isNumber
 
+signedNumberP :: Parser Int
+signedNumberP = P.choice [negate <$ P.char '-', id <$ P.char '+', pure id] <*> numberP 
+
 wordP :: Parser Text
 wordP = lexeme $ P.takeWhile1P (Just "Word") isAlphaNum
 
