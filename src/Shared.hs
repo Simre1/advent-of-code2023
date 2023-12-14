@@ -142,3 +142,7 @@ matrix2DVP f = do
             <$> row
       )
       (zip [0 ..] (zip [0 ..] <$> row_major))
+
+applyNTimes :: Int -> (a -> a) -> a -> a
+applyNTimes 0 f a = a
+applyNTimes x f a = applyNTimes (pred x) f (f a) 
