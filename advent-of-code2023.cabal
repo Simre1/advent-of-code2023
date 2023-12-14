@@ -50,7 +50,9 @@ library
     sbv,
     yaml,
     aeson,
-    bitvec
+    bitvec,
+    MemoTrie,
+    matrix
   default-language:    GHC2021
   default-extensions:
     ScopedTypeVariables

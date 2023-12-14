@@ -12,9 +12,9 @@ My solutions to the coding problems in Advent of Code 2022.
 - [x] Day 8
 - [x] Day 9
 - [x] Day 10
-- [ ] Day 11
-- [ ] Day 12
-- [ ] Day 13
+- [x] Day 11
+- [x] Day 12
+- [x] Day 13
 - [ ] Day 14
 - [ ] Day 15
 - [ ] Day 16
