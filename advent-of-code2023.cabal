@@ -52,7 +52,8 @@ library
     aeson,
     bitvec,
     MemoTrie,
-    matrix
+    matrix,
+    range
   default-language:    GHC2021
   default-extensions:
     ScopedTypeVariables
