@@ -122,7 +122,7 @@ mapFirst f (x : xs) = f x : xs
 mapFirst _ [] = []
 
 anyCharP :: Parser Char
-anyCharP = P.satisfy (>' ')
+anyCharP = P.satisfy (> ' ')
 
 matrix2DP :: (Char -> a) -> Parser [[a]]
 matrix2DP f = many1 $ do
@@ -144,11 +144,18 @@ matrix2DVP f = do
       (zip [0 ..] (zip [0 ..] <$> row_major))
 
 applyNTimes :: Int -> (a -> a) -> a -> a
-applyNTimes 0 f a = a
-applyNTimes x f a = applyNTimes (pred x) f (f a)
+applyNTimes 0 f !a = a
+applyNTimes x f !a = applyNTimes (pred x) f (f a)
 
-replaceList :: Eq a => a -> a -> [a] -> [a]
-replaceList r x (y:ys) = if r == y then x : replaceList r x ys else y : replaceList r x ys
+applyUntilTrue :: (a -> (a, Bool)) -> a -> a
+applyUntilTrue f !a =
+  let (nextA, done) = f a
+   in if done
+        then nextA
+        else applyUntilTrue f nextA
+
+replaceList :: (Eq a) => a -> a -> [a] -> [a]
+replaceList r x (y : ys) = if r == y then x : replaceList r x ys else y : replaceList r x ys
 replaceList _ _ [] = []
 
 anyChar :: Parser Char
