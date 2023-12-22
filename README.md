@@ -23,7 +23,7 @@ My solutions to the coding problems in Advent of Code 2022.
 - [x] Day 19
 - [x] Day 20
 - [x] Day 21
-- [ ] Day 22
+- [x] Day 22
 - [ ] Day 23
 - [ ] Day 24
 - [ ] Day 25

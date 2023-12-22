@@ -160,3 +160,8 @@ replaceList _ _ [] = []
 
 anyChar :: Parser Char
 anyChar = P.satisfy (const True)
+
+withoutIndex :: Int -> [a] -> [a]
+withoutIndex _ [] = []
+withoutIndex 0 (x:xs) = xs
+withoutIndex i (x:xs) = x:withoutIndex (pred i) xs
