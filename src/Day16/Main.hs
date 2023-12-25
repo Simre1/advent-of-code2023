@@ -27,8 +27,6 @@ readInput =
   parseFileMega "inputs/day16/input" $
     LightGrid . A.fromLists' A.Seq <$> matrix2DP id
 
-data Direction = DUp | DDown | DLeft | DRight deriving (Eq, Show, Ord)
-
 toIndexDelta :: Direction -> (A.Ix2, Direction)
 toIndexDelta direction = (,direction) $ case direction of
   DUp -> A.Ix2 (-1) 0

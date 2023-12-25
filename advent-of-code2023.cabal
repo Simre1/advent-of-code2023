@@ -53,7 +53,9 @@ library
     bitvec,
     MemoTrie,
     matrix,
-    range
+    range,
+    parallel,
+    mfsolve
   default-language:    GHC2021
   default-extensions:
     ScopedTypeVariables
@@ -85,4 +87,4 @@ executable runner
   hs-source-dirs: app
   main-is: Main.hs
   build-depends:       base >=4.14, advent-of-code2023
-  ghc-options: -O1 -threaded
+  ghc-options: -O2 -threaded

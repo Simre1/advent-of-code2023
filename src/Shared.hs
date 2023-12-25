@@ -165,3 +165,6 @@ withoutIndex :: Int -> [a] -> [a]
 withoutIndex _ [] = []
 withoutIndex 0 (x:xs) = xs
 withoutIndex i (x:xs) = x:withoutIndex (pred i) xs
+
+data Direction = DUp | DDown | DLeft | DRight deriving (Eq, Ord, Show, Bounded, Enum)
+
