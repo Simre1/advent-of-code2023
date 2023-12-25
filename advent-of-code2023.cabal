@@ -55,7 +55,8 @@ library
     matrix,
     range,
     parallel,
-    mfsolve
+    mfsolve,
+    graphviz
   default-language:    GHC2021
   default-extensions:
     ScopedTypeVariables

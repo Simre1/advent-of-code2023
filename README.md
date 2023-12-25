@@ -26,4 +26,4 @@ My solutions to the coding problems in Advent of Code 2022.
 - [x] Day 22
 - [x] Day 23
 - [x] Day 24
-- [ ] Day 25
+- [x] Day 25
